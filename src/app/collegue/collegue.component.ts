@@ -10,6 +10,8 @@ import { Collegue } from '../models/Collegue';
 export class CollegueComponent implements OnInit {
   @Input()col: Collegue;
 
+  modeAffichage = true;
+
   constructor() { }
 
   ngOnInit(): void {
@@ -17,11 +19,14 @@ export class CollegueComponent implements OnInit {
   // Fonction appelée lors du clic
   // tslint:disable-next-line: typedef
   modifierCollegue(){
-    alert('Modification du collègue');
+    this.modeAffichage = false;
   }
   // tslint:disable-next-line: typedef
   creerCollegue(){
-    alert('Création d’un nouveaucollègue');
+    alert('Création d’un nouveau collègue');
+  }
+  validerCollegue(): void {
+    this.modeAffichage = true;
   }
 
 
