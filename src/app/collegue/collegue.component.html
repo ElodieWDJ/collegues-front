@@ -1,0 +1,53 @@
+<!-- <div>
+  <img class="card-img-top" src="{{col.photoUrl}}" alt="Card image cap" style="max-height: 250px; width: auto; margin-top: 15px; margin-bottom: 15px; margin-left: 15px">
+</div> -->
+
+  <img [src]="col.photoUrl"width="40"height="34">
+
+<div class="card" style="width: 36rem;">
+  <div class="card-body">
+    <div class="row">
+      <div class="col-sm card-text">Matricule :</div><div class="col-sm card-text">{{col.matricule}}</div>
+    </div>
+    <div class="row">
+        <div class="col-sm card-text">Nom :</div><div class="col-sm card-text">{{col.nom}}</div>
+    </div>
+    <div class="row">
+      <div class="col-sm card-text">Prénoms :</div><div class="col-sm card-text">{{col.prenoms}}</div>
+    </div>
+    <div class="row">
+      <div class="col-sm card-text">Date de naissance :</div><div class="col-sm card-text">{{col.dateDeNaissance | date:'dd/MM/yyyy'}}</div>
+    </div>
+    <div class="row">
+      <div class="col-sm card-text">E-mail :</div><div class="col-sm card-text">{{col.email}}</div>
+    </div>
+     <a href="#" class="btn btn-primary"(click)="modifierCollegue()">Modifier</a>
+     <div>
+      <a href (click)="creerCollegue()">Créer un nouveau collégue</a>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- <div class="container">
+  <div class="row justify-content-nd-center">
+    <div class="col-3">
+      <figure class="figure">
+        <img src="assets/tête.jpg"width="40"height="34">
+      </figure>
+    </div>
+    <div>
+      <div class="row">Matricule</div>
+      <div class="row">Nom</div>
+      <div class="row">Prénoms</div>
+      <div class="row">Date de naissance</div>
+      <div class="row">Email</div>
+    </div>
+  <div>
+    <a href="#" class="button-2">Modifier</a>
+  </div>
+  <div>
+    <a href>Créer un nouveau collégue</a>
+  </div>
+  </div> -->
