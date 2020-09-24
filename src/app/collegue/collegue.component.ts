@@ -1,4 +1,4 @@
-import { colleguemock } from './../mock/collegues.mock';
+// import { colleguemock } from './../mock/collegues.mock';
 import { Component, OnInit, Input } from '@angular/core';
 import { Collegue } from '../models/Collegue';
 
@@ -11,6 +11,7 @@ export class CollegueComponent implements OnInit {
   @Input()col: Collegue;
 
   modeAffichage = true;
+  modeCreation = false;
 
   constructor() { }
 
@@ -24,6 +25,7 @@ export class CollegueComponent implements OnInit {
   // tslint:disable-next-line: typedef
   creerCollegue(){
     alert('Création d’un nouveau collègue');
+    this.modeCreation = true;
   }
   validerCollegue(): void {
     this.modeAffichage = true;
