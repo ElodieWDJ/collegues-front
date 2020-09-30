@@ -1,10 +1,18 @@
 <div class="row">
   <div class="col-4">Recherche par nom : </div>
-  <input class="col-3 form-control" type="text">
-  <button type="button" class="col-3 btn btn-info offset-1" (click)="rechercherCollegue()">Rechercher</button>
+  <input class="col-3 form-control" type="text" #saisieNom>
+  <button type="button" class="col-3 btn btn-info offset-1" (click)="rechercherCollegue(saisieNom.value)">Rechercher</button>
 </div>
-<div *ngIf="affichageListe" class="row">
+<div *ngIf="matricules" class="row">
   <ul>
-      <li *ngFor="let obj of matricules"> {{obj}} </li>
+    <li *ngFor="let mat of matricules">
+      <button class="btn btn-link" (click)="selectionner(mat)">{{mat}}</button>
+    </li>
   </ul>
+</div>
+<div *ngIf="matriculeNonTrouve" class="alert alert-warning" role="alert">
+  Le nom ne correspond à aucun collègue !
+</div>
+<div *ngIf="erreurTechnique" class="alert alert-danger" role="alert">
+  ooops!!!
 </div>

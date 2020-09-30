@@ -1,6 +1,8 @@
+import { DataService } from './../services/data.service';
 // import { colleguemock } from './../mock/collegues.mock';
 import { Component, OnInit, Input } from '@angular/core';
 import { Collegue } from '../models/Collegue';
+
 
 @Component({
   selector: 'app-collegue',
@@ -13,9 +15,10 @@ export class CollegueComponent implements OnInit {
   modeAffichage = true;
   modeCreation = false;
 
-  constructor() { }
+  constructor(private dataService: DataService) { }
 
   ngOnInit(): void {
+    this.col = this.dataService.recupererCollegueCourant();
   }
   // Fonction appelée lors du clic
   // tslint:disable-next-line: typedef
